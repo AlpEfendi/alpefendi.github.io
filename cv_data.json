@@ -1,0 +1,148 @@
+{
+  "personal_info": {
+    "name": "Alp İLKME",
+    "title": "Film Tasarım & Kurgu & Görüntü Yönetmeni",
+    "contact": {
+      "address": "Kemal Reis Mah. 279 Sok. No: 16-18 D: 6 Betonyol / Konak / İZMİR",
+      "phone": "0532 504 28 78",
+      "email": "alpilkme@gmail.com",
+      "website": "www.imdb.com : Alp İlkme",
+      "behance": "www.behance.net : alpilkme",
+      "other_links": [
+        "www.beyazperde.com : Alp İlkme"
+      ]
+    },
+    "details": {
+      "birth_date": "01.01.1981",
+      "birth_place": "İzmir",
+      "marital_status": "Evli",
+      "driving_license": "Var (B-A2)",
+      "military_service": "Tamamlandı"
+    }
+  },
+  "education": [
+    {
+      "period": "2024 - Devam",
+      "institution": "Dokuz Eylül Üniversitesi Güzel Sanatlar Enstitüsü",
+      "degree": "Sanat Tasarım Yüksek Lisans"
+    },
+    {
+      "period": "2010 - 2019",
+      "institution": "Dokuz Eylül Üniversitesi Güzel Sanatlar Fakültesi",
+      "degree": "Film Tasarım ve Animasyon Bölümü Mezunu"
+    },
+    {
+      "period": "1996 - 2000",
+      "institution": "İzmir Karataş Lisesi",
+      "degree": ""
+    }
+  ],
+  "experience": [
+    {
+      "period": "Aralık 2025",
+      "company": "Şahıs · Dönemsel",
+      "project": "\"Sevda Gülüsün\"",
+      "role": "Video Prodüksiyon Uzmanı",
+      "description": "\"Sevda Gülüsün\" projesi için modern alternative rock cover prodüksiyonu. Geleneksel eseri modern bir yorumla ve AI destekli video klip ile yeniden tasarladım."
+    },
+    {
+      "period": "Ağu 2025 - Kas 2025",
+      "company": "Source of Agency",
+      "role": "Video Prodüksiyon Uzmanı",
+      "description": "Video Editör ve Yapay Zekâ Destekli İçerik Üreticisi olarak görev aldım. Sosyal medya stratejileri doğrultusunda, Instagram ve dijital platformlar için yüksek etkileşim odaklı video içerikler ürettim. Ham görüntüleri hikâye ve ritim açısından kurgulayarak kısa format videolara dönüştürdüm. Yapay zekâ tabanlı görsel ve video üretim araçlarını (Stable Diffusion vb.) aktif olarak kullanarak sahne varyasyonları ve yaratıcı efektler ürettim."
+    },
+    {
+      "period": "Ağu 2021 - May 2025",
+      "company": "Dokuz Eylül Üniversitesi Rektörlüğü Kurumsal İletişim Koordinatörlüğü",
+      "role": "Video Editor",
+      "description": "Video biriminde; üniversitenin sosyal medya, kurumsal görsel ve video içeriklerinin üretimini gerçekleştirdim. Hareketli Grafikler, Video Düzenleme, Animasyon, Post prodüksiyon ve Kurgu süreçlerini yönettim."
+    },
+    {
+      "period": "2021",
+      "company": "Boyoz Yapım",
+      "project": "\"Fısıltısı\" (Uzun Metraj Sinema Filmi)",
+      "role": "Kurgu Operatörü - Kamera Asistanı"
+    },
+    {
+      "period": "2020",
+      "company": "İzmir Devlet Tiyatrosu",
+      "project": "\"Bir Düş Gibi: Cahide Sonku\" (Oyun)",
+      "role": "2. Kamera Operatörü"
+    },
+    {
+      "period": "2019",
+      "company": "İzmir Devlet Tiyatrosu",
+      "project": "\"Arf Sabiti\" (Oyun)",
+      "role": "2. Kamera Operatörü - Ses Kayıt, Tasarım, Mix"
+    },
+    {
+      "period": "2019",
+      "company": "Boyoz Yapım",
+      "project": "\"Cin Bebek 2\" (Uzun Metraj)",
+      "role": "Ses Kayıt Operatörü - Color Correction"
+    },
+    {
+      "period": "2018",
+      "company": "Boyoz Yapım",
+      "project": "\"Gece Gelen\" (Uzun Metraj)",
+      "role": "Kurgu Operatörü - Color Correction - Görsel Efekt"
+    },
+    {
+      "period": "2018",
+      "project": "\"Fırtına Murat: En Uzun Gece\" (Uzun Metraj)",
+      "role": "Kurgu Operatörü"
+    },
+    {
+      "period": "2017",
+      "company": "T.C. Kültür ve Turizm Bakanlığı",
+      "project": "\"Kimler Geldi Kimler Geçti Alsancak\" Belgeseli",
+      "role": "Görüntü Yönetmeni - Kamera Operatörü - Kurgu Op. - Color"
+    },
+    {
+      "period": "2015 - 2017",
+      "company": "T.C. Kültür ve Turizm Bakanlığı - Sinema Müdürlüğü Destekli",
+      "project": "\"Bambaşka\" (Uzun Metraj)",
+      "role": "Kurgu Operatörü - Color Correction"
+    },
+    {
+      "period": "2014",
+      "company": "T.C. Kültür ve Turizm Bakanlığı, Muğla Valiliği",
+      "project": "Muğla'nın Tanıtım Filmi",
+      "role": "Görüntü Yönetmeni - Kamera Operatörü"
+    },
+    {
+      "period": "2013 - 2014",
+      "company": "Boyoz Yapım",
+      "project": "\"10.Köy: Teyatora\" (Uzun Metraj)",
+      "role": "Görüntü Yönetmeni - Kamera Operatörü"
+    },
+    {
+      "period": "2006",
+      "company": "www.absurdtv.com / www.absurdreklam.com",
+      "role": "Video Montaj - Renklendirme (12 Tv Reklamı)"
+    }
+  ],
+  "skills": {
+    "languages": [
+      "İngilizce (Orta düzey)"
+    ],
+    "computer": {
+      "advanced": [
+        "Adobe Photoshop",
+        "Adobe Premiere",
+        "Stable Diffusion",
+        "Yapay Zeka Araçları"
+      ],
+      "intermediate": [
+        "Cinema 4D",
+        "After Effects",
+        "Adobe Audition"
+      ],
+      "basic": [
+        "Adobe Illustrator",
+        "Davinci Resolve Color Grade"
+      ],
+      "general": "Bilgisayar donanım ve teknik servis tecrübesi"
+    }
+  }
+}

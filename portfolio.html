@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alp İLKME | Portfolyo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: radial-gradient(circle at 50% 10%, #222, #121212 60%);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="container">
+        <div class="nav-flex">
+            <div class="logo">ALP İLKME</div>
+            <div class="nav-links">
+                <a href="index.html">Biyografi</a>
+                <a href="cv.html">CV</a>
+                <a href="portfolio.html" style="color: var(--accent-gold);">Portfolyo</a>
+                <a href="contact.html">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h3
+            style="border-bottom: 1px solid #333; padding-bottom: 20px; color: #555; margin-bottom: 40px; margin-top: 40px;">
+            Öne Çıkan Çalışmalar</h3>
+
+        <div class="portfolio-grid">
+
+            <!-- NEW: AI Project (Video Enabled) -->
+            <div class="project-card" onclick="openProjectDetails('mazi_kalbimde')">
+                <span class="year-badge">2026</span>
+                <img src="cover_mazi.svg" alt="Mazi Kalbimde Bir Yaradır" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Mazi Kalbimde Bir Yaradır</h3>
+                    <div class="card-role">AI Music & Video Producer</div>
+                </div>
+            </div>
+
+            <!-- NEW: Sevda Gülüsün -->
+            <div class="project-card" onclick="openProjectDetails('sevda_gulusun')">
+                <span class="year-badge">2025</span>
+                <img src="cover_sevda.jpg" alt="Sevda Gülüsün" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Sevda Gülüsün</h3>
+                    <div class="card-role">Alternative Rock Cover - Video & AI</div>
+                </div>
+                <div class="play-overlay"></div>
+            </div>
+
+            <!-- NEW: Source of Agency -->
+            <div class="project-card" onclick="openProjectDetails('source_of_agency')">
+                <span class="year-badge">2025</span>
+                <img src="source_of_agency_logo.png" alt="Source of Agency" class="card-image logo-fit">
+                <div class="card-overlay">
+                    <h3 class="card-title">Source of Agency</h3>
+                    <div class="card-role">Video Prodüksiyon Uzmanı</div>
+                </div>
+                <!-- No play overlay for now as no video link -->
+            </div>
+
+            <!-- NEW: Dokuz Eylül Üniversitesi -->
+            <div class="project-card" onclick="openProjectDetails('dokuz_eylul_uni')">
+                <span class="year-badge">2021-2025</span>
+                <img src="dokuz_eylul_logo.png" alt="Dokuz Eylül Üniversitesi" class="card-image logo-fit">
+                <div class="card-overlay">
+                    <h3 class="card-title">Dokuz Eylül Üniversitesi</h3>
+                    <div class="card-role">Video Editor</div>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card" onclick="openProjectDetails('vesvese')">
+                <span class="year-badge">2021</span>
+                <img src="poster_vesvese.jpg" alt="Vesvese: Cin Fısıltısı" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Vesvese: Cin Fısıltısı</h3>
+                    <div class="card-role">Kurgu Operatörlüğü & Kamera Asistanlığı</div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <span class="year-badge">2019</span>
+                <img src="poster_placeholder.svg" alt="Cin Bebek 2" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Cin Bebek 2</h3>
+                    <div class="card-role">Ses, Tasarım & Color</div>
+                </div>
+                <!-- No play overlay means static project or no video yet -->
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <span class="year-badge">2018</span>
+                <img src="poster_placeholder.svg" alt="Gece Gelen" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Gece Gelen</h3>
+                    <div class="card-role">Kurgu, Color & VFX</div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <span class="year-badge">2017</span>
+                <img src="poster_placeholder.svg" alt="Bambaşka" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">Bambaşka</h3>
+                    <div class="card-role">Kurgu & Color Correction</div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <span class="year-badge">2014</span>
+                <img src="poster_placeholder.svg" alt="10. Köy" class="card-image">
+                <div class="card-overlay">
+                    <h3 class="card-title">10. Köy: Teyatora</h3>
+                    <div class="card-role">Görüntü Yönetmeni</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 50px 0; color: #fff; font-size: 0.8rem;">
+        &copy; 2026 Alp İlkme. Tüm hakları saklıdır.
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <!-- Video Content -->
+            <div id="videoContainer" style="display: none;">
+                <h3 id="modalVideoTitle" class="modal-video-title"></h3>
+                <div class="video-wrapper">
+                    <iframe id="videoFrame" src="" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <div id="modalText" class="modal-text-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
