@@ -207,14 +207,33 @@ nav .nav-flex {
     background: var(--bg-card);
     overflow: hidden;
     position: relative;
-    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
     border: 1px solid #333;
+    border-radius: 8px;
+    /* Modern touch */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    /* Subtle depth */
+}
+
+button.project-card {
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    appearance: none;
+}
+
+button.project-card:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
+    /* slightly softer lift */
     border-color: var(--accent-gold);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
 }
 
 .card-image {
@@ -371,6 +390,8 @@ nav .nav-flex {
     display: flex;
     justify-content: center;
     align-items: center;
+    overscroll-behavior: contain;
+    /* Guideline fix */
 }
 
 .video-modal.active {
@@ -394,7 +415,9 @@ nav .nav-flex {
     max-width: 1000px;
     aspect-ratio: 16 / 9;
     background: #000;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.3), 0 0 0 1px rgba(212, 175, 55, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
     z-index: 1001;
 }
 
@@ -536,16 +559,115 @@ nav .nav-flex {
     position: relative;
     width: 100%;
     max-width: 300px;
-    /* Reduced size */
     margin: 0 auto;
     height: auto;
     overflow: hidden;
     border: 3px solid var(--accent-gold);
-    /* Yellow border */
+    border-radius: 12px;
+    /* Modern rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .profile-photo {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* -------------------------------------
+   Mobile Responsiveness
+------------------------------------- */
+@media (max-width: 768px) {
+    body {
+        padding-top: 140px;
+        /* Compensate for fixed header height */
+    }
+
+    /* Base Typography adjustments */
+    h1.hero-title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    /* Navigation Layout */
+    nav {
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav .nav-flex {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px 12px;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    /* CV Page adjustments */
+    .cv-container {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        margin-top: 20px;
+    }
+
+    .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cv-name {
+        font-size: 2.5rem;
+    }
+
+    /* General layout adjustments */
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-image {
+        height: 300px;
+    }
+}
+
+/* -------------------------------------
+   Accessibility (Web Interface Guidelines)
+------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

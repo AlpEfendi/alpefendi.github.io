@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Alp İLKME | Portfolyo</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -36,61 +37,63 @@
         <div class="portfolio-grid">
 
             <!-- NEW: AI Project (Video Enabled) -->
-            <div class="project-card" onclick="openProjectDetails('mazi_kalbimde')">
+            <button type="button" class="project-card" onclick="openProjectDetails('mazi_kalbimde')">
                 <span class="year-badge">2026</span>
-                <img src="cover_mazi.svg" alt="Mazi Kalbimde Bir Yaradır" class="card-image">
+                <img src="cover_mazi.svg" alt="Mazi Kalbimde Bir Yaradır" width="800" height="450" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Mazi Kalbimde Bir Yaradır</h3>
                     <div class="card-role">AI Music & Video Producer</div>
                 </div>
-            </div>
+            </button>
 
             <!-- NEW: Sevda Gülüsün -->
-            <div class="project-card" onclick="openProjectDetails('sevda_gulusun')">
+            <button type="button" class="project-card" onclick="openProjectDetails('sevda_gulusun')">
                 <span class="year-badge">2025</span>
-                <img src="cover_sevda.jpg" alt="Sevda Gülüsün" class="card-image">
+                <img src="cover_sevda.jpg" alt="Sevda Gülüsün" width="800" height="450" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Sevda Gülüsün</h3>
                     <div class="card-role">Alternative Rock Cover - Video & AI</div>
                 </div>
                 <div class="play-overlay"></div>
-            </div>
+            </button>
 
             <!-- NEW: Source of Agency -->
-            <div class="project-card" onclick="openProjectDetails('source_of_agency')">
+            <button type="button" class="project-card" onclick="openProjectDetails('source_of_agency')">
                 <span class="year-badge">2025</span>
-                <img src="source_of_agency_logo.png" alt="Source of Agency" class="card-image logo-fit">
+                <img src="source_of_agency_logo.png" alt="Source of Agency" width="400" height="400"
+                    class="card-image logo-fit">
                 <div class="card-overlay">
                     <h3 class="card-title">Source of Agency</h3>
                     <div class="card-role">Video Prodüksiyon Uzmanı</div>
                 </div>
                 <!-- No play overlay for now as no video link -->
-            </div>
+            </button>
 
             <!-- NEW: Dokuz Eylül Üniversitesi -->
-            <div class="project-card" onclick="openProjectDetails('dokuz_eylul_uni')">
+            <button type="button" class="project-card" onclick="openProjectDetails('dokuz_eylul_uni')">
                 <span class="year-badge">2021-2025</span>
-                <img src="dokuz_eylul_logo.png" alt="Dokuz Eylül Üniversitesi" class="card-image logo-fit">
+                <img src="dokuz_eylul_logo.png" alt="Dokuz Eylül Üniversitesi" width="400" height="400"
+                    class="card-image logo-fit">
                 <div class="card-overlay">
                     <h3 class="card-title">Dokuz Eylül Üniversitesi</h3>
                     <div class="card-role">Video Editor</div>
                 </div>
-            </div>
+            </button>
 
             <!-- Project 1 -->
-            <div class="project-card" onclick="openProjectDetails('vesvese')">
+            <button type="button" class="project-card" onclick="openProjectDetails('vesvese')">
                 <span class="year-badge">2021</span>
-                <img src="poster_vesvese.jpg" alt="Vesvese: Cin Fısıltısı" class="card-image">
+                <img src="poster_vesvese.jpg" alt="Vesvese: Cin Fısıltısı" width="600" height="800" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Vesvese: Cin Fısıltısı</h3>
                     <div class="card-role">Kurgu Operatörlüğü & Kamera Asistanlığı</div>
                 </div>
-            </div>
+            </button>
 
             <!-- Project 2 -->
             <div class="project-card">
                 <span class="year-badge">2019</span>
-                <img src="poster_placeholder.svg" alt="Cin Bebek 2" class="card-image">
+                <img src="poster_placeholder.svg" alt="Cin Bebek 2" width="600" height="800" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Cin Bebek 2</h3>
                     <div class="card-role">Ses, Tasarım & Color</div>
@@ -101,7 +104,7 @@
             <!-- Project 3 -->
             <div class="project-card">
                 <span class="year-badge">2018</span>
-                <img src="poster_placeholder.svg" alt="Gece Gelen" class="card-image">
+                <img src="poster_placeholder.svg" alt="Gece Gelen" width="600" height="800" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Gece Gelen</h3>
                     <div class="card-role">Kurgu, Color & VFX</div>
@@ -111,7 +114,7 @@
             <!-- Project 4 -->
             <div class="project-card">
                 <span class="year-badge">2017</span>
-                <img src="poster_placeholder.svg" alt="Bambaşka" class="card-image">
+                <img src="poster_placeholder.svg" alt="Bambaşka" width="600" height="800" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">Bambaşka</h3>
                     <div class="card-role">Kurgu & Color Correction</div>
@@ -121,7 +124,7 @@
             <!-- Project 6 -->
             <div class="project-card">
                 <span class="year-badge">2014</span>
-                <img src="poster_placeholder.svg" alt="10. Köy" class="card-image">
+                <img src="poster_placeholder.svg" alt="10. Köy" width="600" height="800" class="card-image">
                 <div class="card-overlay">
                     <h3 class="card-title">10. Köy: Teyatora</h3>
                     <div class="card-role">Görüntü Yönetmeni</div>

@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modalText = document.getElementById('modalText');
 
+    // Date Formatter based on Web Interface Guidelines
+    const formatMonthYear = (dateStr) => {
+        try {
+            return new Intl.DateTimeFormat(['tr-TR', navigator.language], { month: 'short', year: 'numeric' }).format(new Date(dateStr));
+        } catch (e) {
+            return dateStr;
+        }
+    };
+
     // Project Data
     const projectDetails = {
         'mazi_kalbimde': {
@@ -14,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             content: `
                 <h3>AI Music & Video Producer (Project-Based)</h3>
                 <p><strong>Şahıs · Dönemsel</strong><br>
-                Oca 2026 - Oca 2026 · 1 ay<br>
+                ${formatMonthYear('2026-01-01')} - ${formatMonthYear('2026-01-01')} · 1 ay<br>
                 İzmir, Türkiye · Uzaktan</p>
 
                 <h3>“Mazi Kalbimde Bir Yaradır” — Müzik & Klip Projesi</h3>
@@ -47,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'source_of_agency': {
             title: 'Source of Agency - Video Prodüksiyon Uzmanı',
             content: `
-                <p><strong>Ağu 2025 - Kas 2025 (2,5 Ay – Ofis içi, tam zamanlı proje)</strong></p>
+                <p><strong>${formatMonthYear('2025-08-01')} - ${formatMonthYear('2025-11-01')} (2,5 Ay – Ofis içi, tam zamanlı proje)</strong></p>
                 <p>Source of Agency bünyesinde 2,5 ay boyunca ofis ortamında Video Editör ve Yapay Zekâ Destekli İçerik Üreticisi olarak görev aldım. Bu süreçte markanın sosyal medya stratejileri doğrultusunda, Instagram ve dijital platformlar için yüksek etkileşim odaklı video içerikler ürettim.</p>
                 <p>Ham görüntüleri; hikâye akışı, tempo, ritim ve görsel bütünlük açısından kurgulayarak sosyal medya dinamiklerine uygun, izleyici dikkatini tutan kısa format videolara dönüştürdüm. İçeriklerin görsel gücünü artırmak için yapay zekâ tabanlı görsel ve video üretim araçlarını aktif olarak kullandım; sahne varyasyonları, stilize görüntüler ve yaratıcı efektler ürettim.</p>
                 <h3>Görev Kapsamım:</h3>
@@ -64,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'dokuz_eylul_uni': {
             title: 'Dokuz Eylül Üniversitesi - Video Editor',
             content: `
-                <p><strong>Ağu 2021 - May 2025 (3 yıl 10 ay – Ofis içi, tam zamanlı)</strong></p>
+                <p><strong>${formatMonthYear('2021-08-01')} - ${formatMonthYear('2025-05-01')} (3 yıl 10 ay – Ofis içi, tam zamanlı)</strong></p>
                 <p>Dokuz Eylül Üniversitesi Rektörlüğü Kurumsal İletişim Koordinatörlüğü bünyesinde Video Editor olarak görev aldım. Video biriminde; üniversitenin sosyal medya, kurumsal görsel ve video içeriklerinin üretimini gerçekleştirdim.</p>
                 <h3>Yetkinlikler ve Faaliyetler:</h3>
                 <ul>
@@ -117,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>Vesvese: Cin Fısıltısı</h3>
                 <p><strong>Video Prodüksiyon Uzmanı</strong><br>
                 Boyoz Yapım · Tam zamanlı<br>
-                May 2021 - Tem 2021 · 3 ay<br>
+                ${formatMonthYear('2021-05-01')} - ${formatMonthYear('2021-07-01')} · 3 ay<br>
                 İzmir, Türkiye · Ofisten</p>
                 
                 <p>Vesvese: Cin Fısıltısı sinema filmi için. Kurgu operatörlüğü ve kamera asistanlığı yaptım.</p>
