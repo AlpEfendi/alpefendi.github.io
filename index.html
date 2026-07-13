@@ -4,79 +4,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light dark">
+    <meta name="color-scheme" content="dark light">
+    <meta name="theme-color" content="#111218">
+    <meta name="description" content="Alp İlkme'nin görüntü yönetmenliği, kurgu ve yapay zekâ destekli görsel üretim pratiği.">
     <title>Alp İLKME | Biyografi</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600;700&amp;family=Nunito:wght@700;800;900&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-image: radial-gradient(circle at 50% 10%, #222, #121212 60%);
-            min-height: 100vh;
-        }
-    </style>
 </head>
 
-<body>
+<body class="page-home">
+    <a class="skip-link" href="#main-content">Ana içeriğe geç</a>
 
-    <nav class="container">
-        <div class="nav-flex">
-            <div class="logo">ALP İLKME</div>
-            <div class="nav-links">
-                <a href="index.html" style="color: var(--accent-gold);">Biyografi</a>
-                <a href="cv.html">CV</a>
-                <a href="portfolio.html">Portfolyo</a>
-                <a href="contact.html">İletişim</a>
+    <div class="os-shell">
+        <header class="window-bar">
+            <div class="window-controls" aria-hidden="true">
+                <span class="window-dot window-dot--close"></span>
+                <span class="window-dot window-dot--minimize"></span>
+                <span class="window-dot window-dot--maximize"></span>
+            </div>
+            <a class="desktop-brand" href="index.html" aria-label="Alp İlkme ana sayfa">
+                <span class="brand-mark">A</span>
+                <span>ALP.OS</span>
+                <small>2.8</small>
+            </a>
+            <div class="document-tab" aria-hidden="true">
+                <span class="tab-status"></span>
+                biyografi.canvas
+            </div>
+            <div class="window-actions">
+                <span class="window-mode">DESIGN</span>
+                <time class="desktop-time" data-desktop-time datetime="12:00">12:00</time>
+                <button class="theme-toggle" type="button" data-theme-toggle hidden aria-label="Açık temaya geç" title="Açık temaya geç">
+                    <svg class="theme-icon theme-icon-sun" aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-sun"></use></svg>
+                    <svg class="theme-icon theme-icon-moon" aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-moon"></use></svg>
+                    <span data-theme-label>Açık</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="app-body">
+            <nav class="app-dock" aria-label="Ana bölümler">
+                <a class="dock-link" href="index.html" aria-current="page">
+                    <span class="dock-icon dock-icon--mint"><svg aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-user"></use></svg></span>
+                    <span class="dock-label">Biyografi</span>
+                </a>
+                <a class="dock-link" href="cv.html">
+                    <span class="dock-icon dock-icon--yellow"><svg aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-document"></use></svg></span>
+                    <span class="dock-label">CV</span>
+                </a>
+                <a class="dock-link" href="portfolio.html">
+                    <span class="dock-icon dock-icon--blue"><svg aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-folder"></use></svg></span>
+                    <span class="dock-label">Portfolyo</span>
+                </a>
+                <a class="dock-link" href="contact.html">
+                    <span class="dock-icon dock-icon--pink"><svg aria-hidden="true" focusable="false"><use href="desktop-icons.svg#icon-mail"></use></svg></span>
+                    <span class="dock-label">İletişim</span>
+                </a>
+            </nav>
+
+            <div class="workspace">
+                <div class="tool-bar">
+                    <div class="tool-palette" aria-hidden="true">
+                        <span class="tool tool--active"><svg><use href="desktop-icons.svg#icon-cursor"></use></svg></span>
+                        <span class="tool"><svg><use href="desktop-icons.svg#icon-frame"></use></svg></span>
+                        <span class="tool"><svg><use href="desktop-icons.svg#icon-type"></use></svg></span>
+                        <span class="tool"><svg><use href="desktop-icons.svg#icon-hand"></use></svg></span>
+                        <span class="tool"><svg><use href="desktop-icons.svg#icon-chat"></use></svg></span>
+                    </div>
+                    <p class="workspace-path"><span>workspace</span> / alp-ilkme / <strong>biyografi.canvas</strong></p>
+                    <div class="view-meta" aria-hidden="true"><span>100%</span><span>RGB</span></div>
+                </div>
+
+                <main id="main-content" class="app-canvas home-canvas" tabindex="-1">
+                    <div class="canvas-content">
+                        <section class="home-hero" aria-labelledby="hero-title">
+                            <div class="hero-object selected-object">
+                                <span class="selection-label" aria-hidden="true">text / hero-title</span>
+                                <span class="selection-handle handle-nw" aria-hidden="true"></span>
+                                <span class="selection-handle handle-ne" aria-hidden="true"></span>
+                                <span class="selection-handle handle-sw" aria-hidden="true"></span>
+                                <span class="selection-handle handle-se" aria-hidden="true"></span>
+
+                                <p class="eyebrow"><span class="status-pulse" aria-hidden="true"></span> İZMİR'DEN ÜRETİYOR / 2026</p>
+                                <h1 id="hero-title" class="hero-title">
+                                    <span>GÖRSEL</span>
+                                    <span>HİKÂYE</span>
+                                    <span class="hero-title-accent">+ YAPAY ZEKÂ</span>
+                                </h1>
+                                <ul class="role-stickers" aria-label="Uzmanlık alanları">
+                                    <li class="sticker sticker--mint">Görüntü Yönetmeni</li>
+                                    <li class="sticker sticker--purple">Kurgu</li>
+                                    <li class="sticker sticker--pink">AI Artist</li>
+                                </ul>
+                                <span class="hello-sticker" aria-hidden="true">MERHABA!</span>
+                                <span class="spark-sticker spark-sticker--one" aria-hidden="true">✦</span>
+                                <span class="spark-sticker spark-sticker--two" aria-hidden="true">✦</span>
+                            </div>
+
+                            <figure class="asset-window profile-window" data-hover-lift>
+                                <figcaption class="asset-window-bar">
+                                    <span class="mini-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                                    profile_photo.jpg
+                                    <span>01/01</span>
+                                </figcaption>
+                                <div class="profile-image-wrap">
+                                    <img src="profile_photo.jpg" alt="Alp İlkme" width="803" height="1024" class="profile-photo" decoding="async">
+                                    <span class="image-tag image-tag--top" aria-hidden="true">ALP İLKME</span>
+                                    <span class="image-tag image-tag--bottom" aria-hidden="true">FILM / EDIT / AI</span>
+                                </div>
+                            </figure>
+                        </section>
+
+                        <section class="about-workbench" aria-labelledby="biography-title">
+                            <header class="section-heading">
+                                <p class="section-index">01 / HAKKIMDA</p>
+                                <h2 id="biography-title">HİKÂYEYİ<br><span>GÖRÜNTÜYLE</span> KURUYORUM.</h2>
+                                <div class="heading-note" data-hover-lift aria-hidden="true">creative file<br>since 2010</div>
+                            </header>
+
+                            <div class="about-layout">
+                                <article class="editor-panel biography-panel" data-hover-lift>
+                                    <div class="panel-bar">
+                                        <h3 class="panel-title"><span class="panel-led" aria-hidden="true"></span> biography.txt</h3>
+                                        <span>TR — 04 PARAGRAF</span>
+                                    </div>
+                                    <div class="about-text">
+                                        <p><span class="line-no" aria-hidden="true">01</span>Dokuz Eylül Üniversitesi Güzel Sanatlar Fakültesi Film Tasarım Bölümü mezunuyum ve Dokuz Eylül Üniversitesi Güzel Sanatlar Enstitüsü <strong>Sanat ve Tasarım Anasanat Dalı</strong>’nda yüksek lisans eğitimime devam ediyorum. Sinema, video üretimi ve görsel anlatım alanlarında; uzun metraj filmlerden belgesellere, tanıtım filmlerinden sahne kayıtlarına uzanan geniş bir üretim pratiğine sahibim.</p>
+
+                                        <p><span class="line-no" aria-hidden="true">02</span>Kariyerim boyunca altı uzun metraj sinema filminde görüntü yönetmenliği, kurgu, color correction, görsel efekt, ses kayıt ve kamera operatörlüğü gibi farklı roller üstlendim. Bu filmlerin tamamı Türkiye genelinde vizyona girmiş; sinema, televizyon ve sahne sanatları alanlarında izleyiciyle buluşmuştur. Bunun yanı sıra kamusal ve kurumsal projeler kapsamında tanıtım filmi üretimleri gerçekleştirdim.</p>
+
+                                        <p><span class="line-no" aria-hidden="true">03</span>Bu üretim pratiğini, kişisel ve kurumsal markalar için sosyal medya odaklı içeriklerle genişleterek; çekim, kurgu, görsel tasarım, <mark>yapay zekâ destekli üretimler</mark> ve motion grafik dâhil olmak üzere yaratıcı sürecin tüm aşamalarında aktif rol alıyorum.</p>
+
+                                        <p><span class="line-no" aria-hidden="true">04</span>Üretim yaklaşımımda yapay zekâyı yalnızca teknik bir araç olarak değil, yaratıcı düşünceyi besleyen ve yeni anlatım olanakları açan bir üretim ortağı olarak konumlandırıyorum. Görsel estetik, kavramsal derinlik ve hikâye anlatımı; sinema, dijital içerik ve AI tabanlı görsel-video projelerimin temelini oluşturur. Akademik bakış açısını sektörel üretimle bir araya getiren, çağdaş ve disiplinlerarası işler üretmeye devam ediyorum.</p>
+                                    </div>
+                                </article>
+
+                                <aside class="inspector-stack" aria-label="Kısa bilgiler ve profil bağlantıları">
+                                    <section class="inspector-card inspector-card--facts" data-hover-lift>
+                                        <div class="panel-bar"><h3 class="panel-title">properties</h3><span>04</span></div>
+                                        <dl class="fact-list">
+                                            <div><dt>Konum</dt><dd>İzmir, TR</dd></div>
+                                            <div><dt>Alan</dt><dd>Film &amp; Video</dd></div>
+                                            <div><dt>Odak</dt><dd>Visual + AI</dd></div>
+                                            <div><dt>Durum</dt><dd><span class="status-pulse" aria-hidden="true"></span> Üretimde</dd></div>
+                                        </dl>
+                                    </section>
+
+                                    <section class="inspector-card inspector-card--links" data-hover-lift>
+                                        <div class="panel-bar"><h3 class="panel-title">external_links</h3><span>↗</span></div>
+                                        <div class="profile-links">
+                                            <a href="https://www.behance.net/alpilkme" target="_blank" rel="noopener" aria-label="Behance profilim (yeni sekmede açılır)">
+                                                <span>Behance</span><svg aria-hidden="true"><use href="desktop-icons.svg#icon-external"></use></svg>
+                                            </a>
+                                            <a href="https://www.imdb.com/name/nm7044649/" target="_blank" rel="noopener" aria-label="IMDb profilim (yeni sekmede açılır)">
+                                                <span>IMDb</span><svg aria-hidden="true"><use href="desktop-icons.svg#icon-external"></use></svg>
+                                            </a>
+                                            <a href="https://www.beyazperde.com/sanatcilar/sanatci-676189/" target="_blank" rel="noopener" aria-label="Beyazperde profilim (yeni sekmede açılır)">
+                                                <span>Beyazperde</span><svg aria-hidden="true"><use href="desktop-icons.svg#icon-external"></use></svg>
+                                            </a>
+                                        </div>
+                                    </section>
+                                </aside>
+                            </div>
+                        </section>
+                    </div>
+                </main>
+
+                <footer class="status-bar">
+                    <span><i class="ready-dot" aria-hidden="true"></i> READY</span>
+                    <span class="status-hint">SEÇİLİ: HERO-TITLE</span>
+                    <span>İZMİR, TR</span>
+                    <small>© 2026 ALP İLKME</small>
+                </footer>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <header class="container section-padding" style="padding-top: 80px; padding-bottom: 40px;">
-        <h1 class="hero-title">GÖRSEL HİKAYECİLİK <br> & YAPAY ZEKA</h1>
-        <div class="subtitle">Görüntü Yönetmeni • Kurgu • AI Artist</div>
-    </header>
-
-    <!-- About Section -->
-    <section class="container about-section">
-        <div class="about-text">
-            <p>Dokuz Eylül Üniversitesi Güzel Sanatlar Fakültesi Film Tasarım Bölümü mezunuyum ve Dokuz Eylül
-                Üniversitesi Güzel Sanatlar Enstitüsü <strong>Sanat ve Tasarım Anasanat Dalı</strong>’nda yüksek lisans
-                eğitimime devam ediyorum. Sinema, video üretimi ve görsel anlatım alanlarında; uzun metraj filmlerden
-                belgesellere, tanıtım filmlerinden sahne kayıtlarına uzanan geniş bir üretim pratiğine sahibim.</p>
-
-            <p>Kariyerim boyunca altı uzun metraj sinema filminde görüntü yönetmenliği, kurgu, color correction, görsel
-                efekt, ses kayıt ve kamera operatörlüğü gibi farklı roller üstlendim. Bu filmlerin tamamı Türkiye
-                genelinde vizyona girmiş; sinema, televizyon ve sahne sanatları alanlarında izleyiciyle buluşmuştur.
-                Bunun yanı sıra kamusal ve kurumsal projeler kapsamında tanıtım filmi üretimleri gerçekleştirdim.</p>
-
-            <p>Bu üretim pratiğini, kişisel ve kurumsal markalar için sosyal medya odaklı içeriklerle genişleterek;
-                çekim, kurgu, görsel tasarım, <span class="about-highlight">yapay zekâ destekli üretimler</span> ve
-                motion grafik dâhil olmak üzere yaratıcı sürecin tüm aşamalarında aktif rol alıyorum.</p>
-
-            <p>Üretim yaklaşımımda yapay zekâyı yalnızca teknik bir araç olarak değil, yaratıcı düşünceyi besleyen ve
-                yeni anlatım olanakları açan bir üretim ortağı olarak konumlandırıyorum. Görsel estetik, kavramsal
-                derinlik ve hikâye anlatımı; sinema, dijital içerik ve AI tabanlı görsel-video projelerimin temelini
-                oluşturur. Akademik bakış açısını sektörel üretimle bir araya getiren, çağdaş ve disiplinlerarası işler
-                üretmeye devam ediyorum.</p>
-
-            <div style="margin-top: 15px; border-bottom: 1px solid #666; padding-bottom: 5px;">
-                <a href="https://www.behance.net/alpilkme" target="_blank"
-                    style="display: inline-block; margin-right: 15px;">Behance Profilim</a>
-                <a href="https://www.imdb.com/name/nm7044649/" target="_blank"
-                    style="display: inline-block; margin-right: 15px;">IMDb</a>
-                <a href="https://www.beyazperde.com/sanatcilar/sanatci-676189/" target="_blank"
-                    style="display: inline-block;">Beyazperde</a>
-            </div>
-        </div>
-        <div class="about-image">
-            <div class="profile-container">
-                <img src="profile_photo.jpg" alt="Alp İlkme" width="600" height="800" class="profile-photo">
-            </div>
-        </div>
-    </section>
-
-    <footer style="text-align: center; padding: 50px 0; color: #fff; font-size: 0.8rem;">
-        &copy; 2026 Alp İlkme. Tüm hakları saklıdır.
-    </footer>
-
+    <script src="desktop.js" defer></script>
 </body>
 
 </html>

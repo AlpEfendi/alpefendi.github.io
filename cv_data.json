@@ -3,21 +3,13 @@
     "name": "Alp İLKME",
     "title": "Film Tasarım & Kurgu & Görüntü Yönetmeni",
     "contact": {
-      "address": "Kemal Reis Mah. 279 Sok. No: 16-18 D: 6 Betonyol / Konak / İZMİR",
-      "phone": "0532 504 28 78",
+      "address": "İzmir, Türkiye",
       "email": "alpilkme@gmail.com",
       "website": "www.imdb.com : Alp İlkme",
       "behance": "www.behance.net : alpilkme",
       "other_links": [
         "www.beyazperde.com : Alp İlkme"
       ]
-    },
-    "details": {
-      "birth_date": "01.01.1981",
-      "birth_place": "İzmir",
-      "marital_status": "Evli",
-      "driving_license": "Var (B-A2)",
-      "military_service": "Tamamlandı"
     }
   },
   "education": [
@@ -38,6 +30,13 @@
     }
   ],
   "experience": [
+    {
+      "period": "Ocak 2026",
+      "company": "Şahıs · Proje Bazlı",
+      "project": "\"Mazi Kalbimde Bir Yaradır\"",
+      "role": "AI Music & Video Producer",
+      "description": "Yapay zekâ destekli müzik üretimi, ses tasarımı, görsel üretim ve sinematik video kurgu süreçlerini uçtan uca yönettim."
+    },
     {
       "period": "Aralık 2025",
       "company": "Şahıs · Dönemsel",
@@ -60,7 +59,7 @@
     {
       "period": "2021",
       "company": "Boyoz Yapım",
-      "project": "\"Fısıltısı\" (Uzun Metraj Sinema Filmi)",
+      "project": "\"Vesvese: Cin Fısıltısı\" (Uzun Metraj Sinema Filmi)",
       "role": "Kurgu Operatörü - Kamera Asistanı"
     },
     {

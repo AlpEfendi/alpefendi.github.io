@@ -3,13 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalFrame = document.getElementById('videoFrame');
     const closeBtn = document.querySelector('.close-modal');
     const overlay = document.querySelector('.modal-overlay');
-
     const modalText = document.getElementById('modalText');
+    const videoContainer = document.getElementById('videoContainer');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.querySelector('.modal-content');
+
+    if (!modal || !modalFrame || !closeBtn || !overlay || !modalText || !videoContainer || !modalTitle || !modalContent) {
+        console.warn('Portfolyo modalı başlatılamadı: gerekli bir arayüz öğesi eksik.');
+        return;
+    }
 
     // Date Formatter based on Web Interface Guidelines
     const formatMonthYear = (dateStr) => {
         try {
-            return new Intl.DateTimeFormat(['tr-TR', navigator.language], { month: 'short', year: 'numeric' }).format(new Date(dateStr));
+            const [year, month] = dateStr.split('-').map(Number);
+            if (!year || !month) return dateStr;
+
+            return new Intl.DateTimeFormat(['tr-TR', navigator.language], {
+                month: 'short',
+                year: 'numeric',
+                timeZone: 'UTC'
+            }).format(new Date(Date.UTC(year, month - 1, 1)));
         } catch (e) {
             return dateStr;
         }
@@ -156,125 +170,201 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Function to open text details (and optional video)
+    const backgroundElements = Array.from(document.body.children)
+        .filter((element) => element !== modal && element.tagName !== 'SCRIPT');
+    const backgroundState = new Map();
+    let lastFocusedElement = null;
+    let previousBodyOverflow = '';
+
+    const toEmbedUrl = (rawUrl, autoplay = false) => {
+        try {
+            const url = new URL(rawUrl);
+            const hostname = url.hostname.toLowerCase().replace(/^www\./, '');
+            const pathParts = url.pathname.split('/').filter(Boolean);
+            let videoId = '';
+            let embedUrl = null;
+
+            if (hostname === 'youtu.be') {
+                videoId = pathParts[0] || '';
+            } else if (hostname === 'youtube.com' || hostname === 'm.youtube.com') {
+                if (['embed', 'shorts', 'live'].includes(pathParts[0])) {
+                    videoId = pathParts[1] || '';
+                } else {
+                    videoId = url.searchParams.get('v') || '';
+                }
+
+                if (/^[A-Za-z0-9_-]{6,}$/.test(videoId)) {
+                    embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                }
+            }
+
+            if (!embedUrl && /^[A-Za-z0-9_-]{6,}$/.test(videoId)) {
+                embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            }
+
+            if (!embedUrl && (hostname === 'vimeo.com' || hostname === 'player.vimeo.com')) {
+                videoId = pathParts.find((part) => /^\d+$/.test(part)) || '';
+                if (videoId) embedUrl = `https://player.vimeo.com/video/${videoId}`;
+            }
+
+            if (!embedUrl) return null;
+            return autoplay ? `${embedUrl}?autoplay=1` : embedUrl;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const setBackgroundInert = (isInert) => {
+        if (isInert) {
+            backgroundState.clear();
+            backgroundElements.forEach((element) => {
+                backgroundState.set(element, {
+                    hadInert: element.hasAttribute('inert'),
+                    ariaHidden: element.getAttribute('aria-hidden')
+                });
+                element.setAttribute('inert', '');
+                element.setAttribute('aria-hidden', 'true');
+            });
+            return;
+        }
+
+        backgroundElements.forEach((element) => {
+            const state = backgroundState.get(element);
+            if (!state) return;
+
+            if (!state.hadInert) element.removeAttribute('inert');
+            if (state.ariaHidden === null) {
+                element.removeAttribute('aria-hidden');
+            } else {
+                element.setAttribute('aria-hidden', state.ariaHidden);
+            }
+        });
+        backgroundState.clear();
+    };
+
+    const openModal = () => {
+        const wasActive = modal.classList.contains('active');
+        if (!wasActive) {
+            lastFocusedElement = document.activeElement;
+            previousBodyOverflow = document.body.style.overflow;
+            setBackgroundInert(true);
+            document.body.style.overflow = 'hidden';
+        }
+
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        closeBtn.focus({ preventScroll: true });
+        requestAnimationFrame(() => {
+            if (modal.classList.contains('active')) closeBtn.focus({ preventScroll: true });
+        });
+        window.setTimeout(() => {
+            if (modal.classList.contains('active') && document.activeElement !== closeBtn) {
+                closeBtn.focus({ preventScroll: true });
+            }
+        }, 50);
+    };
+
     window.openProjectDetails = function (projectId) {
         const data = projectDetails[projectId];
         if (!data) return;
 
-        // Set Text Content
-        modalText.innerHTML = `<h2>${data.title}</h2><div class="details-body">${data.content}</div`;
+        modalTitle.textContent = data.title;
+        modalText.innerHTML = `<div class="details-body">${data.content}</div>`;
+        modalContent.classList.remove('video-mode');
+        modalContent.classList.add('text-mode');
 
-        // Handle Video if present
-        const videoContainer = document.getElementById('videoContainer');
-        const modalVideoTitle = document.getElementById('modalVideoTitle');
-        const modalContent = document.querySelector('.modal-content');
-
-        if (data.videoUrl) {
-            let embedUrl = data.videoUrl;
-
-            // Convert YouTube Watch URL to Embed URL
-            if (embedUrl.includes('youtube.com/watch?v=')) {
-                const videoId = embedUrl.split('v=')[1].split('&')[0];
-                embedUrl = `https://www.youtube.com/embed/${videoId}`;
-            } else if (embedUrl.includes('youtu.be/')) {
-                const videoId = embedUrl.split('youtu.be/')[1].split('?')[0];
-                embedUrl = `https://www.youtube.com/embed/${videoId}`;
-            } else if (embedUrl.includes('vimeo.com/')) {
-                const videoId = embedUrl.split('vimeo.com/')[1];
-                embedUrl = `https://player.vimeo.com/video/${videoId}`;
-            }
-
+        const embedUrl = data.videoUrl ? toEmbedUrl(data.videoUrl) : null;
+        if (embedUrl) {
             modalFrame.src = embedUrl;
-            videoContainer.style.display = 'block';
-            modalVideoTitle.style.display = 'none';
+            modalFrame.title = `${data.title} videosu`;
+            videoContainer.hidden = false;
         } else {
-            videoContainer.style.display = 'none';
-            modalFrame.src = '';
+            modalFrame.removeAttribute('src');
+            videoContainer.hidden = true;
         }
 
-        // Switch to text mode (layout)
-        modalText.style.display = 'block';
-        modalFrame.style.display = 'block';
-
-        modalContent.classList.add('text-mode'); // Keep text-mode for padding etc
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        openModal();
     };
 
-    // Function to open modal (Video Loop - Pure Video Mode)
-    window.openVideo = function (videoUrl, title = null) {
-        if (!videoUrl || videoUrl === 'null') {
-            alert('Bu proje için video henüz yüklenmedi.');
+    window.openVideo = function (videoUrl, title = 'Proje Videosu') {
+        const embedUrl = toEmbedUrl(videoUrl, true);
+        if (!embedUrl) {
+            alert('Video bağlantısı geçersiz veya desteklenmiyor.');
             return;
         }
 
-        const videoContainer = document.getElementById('videoContainer');
-        const modalVideoTitle = document.getElementById('modalVideoTitle');
-        const modalContent = document.querySelector('.modal-content');
-
-        // Handle YouTube URLs to ensure embed format
-        let embedUrl = videoUrl;
-        if (videoUrl.includes('youtube.com/watch?v=')) {
-            const videoId = videoUrl.split('v=')[1];
-            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        } else if (videoUrl.includes('youtu.be/')) {
-            const videoId = videoUrl.split('youtu.be/')[1];
-            embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-        } else if (videoUrl.includes('vimeo.com/')) {
-            // Vimeo support
-            const videoId = videoUrl.split('vimeo.com/')[1];
-            embedUrl = `https://player.vimeo.com/video/${videoId}?autoplay=1`;
-        }
-
+        modalTitle.textContent = title;
+        modalText.innerHTML = '';
         modalFrame.src = embedUrl;
-
-        // Setup Title
-        if (title) {
-            modalVideoTitle.innerText = title;
-            modalVideoTitle.style.display = 'block';
-        } else {
-            modalVideoTitle.style.display = 'none';
-        }
-
-        // Switch to video mode
-        modalText.style.display = 'none';
-        modalFrame.style.display = 'block'; // Ensure iframe is visible within wrapper
-        videoContainer.style.display = 'block';
-
-        // Add specific class for styling
+        modalFrame.title = `${title} videosu`;
+        videoContainer.hidden = false;
         modalContent.classList.remove('text-mode');
         modalContent.classList.add('video-mode');
-
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        openModal();
     };
 
-    // Function to close modal
     window.closeModal = function () {
+        if (!modal.classList.contains('active')) return;
+
         modal.classList.remove('active');
-        modalFrame.src = ''; // Stop video
+        modal.setAttribute('aria-hidden', 'true');
+        modalFrame.removeAttribute('src');
+        videoContainer.hidden = true;
+        modalTitle.textContent = '';
         modalText.innerHTML = '';
+        modalContent.classList.remove('text-mode', 'video-mode');
+        document.body.style.overflow = previousBodyOverflow;
+        setBackgroundInert(false);
 
-        // Reset Video Container
-        document.getElementById('videoContainer').style.display = 'none';
-        document.getElementById('modalVideoTitle').innerText = '';
+        if (lastFocusedElement instanceof HTMLElement && lastFocusedElement.isConnected) {
+            lastFocusedElement.focus({ preventScroll: true });
+        }
+        lastFocusedElement = null;
+    };
 
-        document.body.style.overflow = '';
-        // Reset classes
-        const modalContent = document.querySelector('.modal-content');
-        modalContent.classList.remove('text-mode');
-        modalContent.classList.remove('video-mode');
-    }
+    document.querySelectorAll('[data-project-id]').forEach((button) => {
+        button.addEventListener('click', () => openProjectDetails(button.dataset.projectId));
+    });
 
-    // Event Listeners
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
 
-    // Escape key to close
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
+    document.addEventListener('focusin', (event) => {
+        if (modal.classList.contains('active') && !modal.contains(event.target)) {
+            closeBtn.focus({ preventScroll: true });
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (!modal.classList.contains('active')) return;
+
+        if (event.key === 'Escape') {
+            event.preventDefault();
             closeModal();
+            return;
+        }
+
+        if (event.key !== 'Tab') return;
+
+        const focusableElements = Array.from(modal.querySelectorAll(
+            'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])'
+        )).filter((element) => !element.hidden && element.getClientRects().length > 0);
+
+        if (!focusableElements.length) {
+            event.preventDefault();
+            closeBtn.focus();
+            return;
+        }
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+            event.preventDefault();
+            lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+            event.preventDefault();
+            firstElement.focus();
         }
     });
 });
