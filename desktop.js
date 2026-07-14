@@ -221,7 +221,7 @@
         dock.setAttribute('aria-label', 'macOS uygulama Dock önizlemesi');
         dock.innerHTML = `
             <div class="mac-dock-items" aria-hidden="true">
-                <span class="mac-dock-slot mac-dock-slot--running" data-mac-dock-slot>
+                <span class="mac-dock-slot" data-mac-dock-slot>
                     <span class="mac-dock-visual">
                         <img class="mac-dock-image" src="icons/mac/finder_dark.png" data-icon-dark="icons/mac/finder_dark.png" data-icon-light="icons/mac/finder_light.png" alt="" draggable="false">
                     </span>
@@ -257,7 +257,7 @@
                     </span>
                     <span class="mac-dock-tooltip">Saat</span>
                 </span>
-                <span class="mac-dock-slot mac-dock-slot--running" data-mac-dock-slot>
+                <span class="mac-dock-slot" data-mac-dock-slot>
                     <span class="mac-dock-visual">
                         <img class="mac-dock-image" src="icons/mac/tv.png" alt="" draggable="false">
                     </span>
@@ -268,6 +268,12 @@
                         <img class="mac-dock-image" src="icons/mac/settings_dark.png" data-icon-dark="icons/mac/settings_dark.png" data-icon-light="icons/mac/sattings_light.png" alt="" draggable="false">
                     </span>
                     <span class="mac-dock-tooltip">Sistem Ayarları</span>
+                </span>
+                <span class="mac-dock-slot mac-dock-slot--alp mac-dock-slot--running" data-mac-dock-slot>
+                    <span class="mac-dock-visual">
+                        <span class="win-alp-logo mac-alp-logo">A</span>
+                    </span>
+                    <span class="mac-dock-tooltip">ALP.OS</span>
                 </span>
                 <span class="mac-dock-separator" aria-hidden="true"></span>
                 <span class="mac-dock-slot mac-dock-slot--folder" data-mac-dock-slot>
