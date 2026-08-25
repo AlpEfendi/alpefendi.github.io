@@ -1431,22 +1431,36 @@ button.project-card:hover .card-image {
         linear-gradient(145deg, color-mix(in srgb, var(--surface) 82%, var(--card-accent)), var(--surface-sunken));
 }
 
+.pixel-ai-logo-crop {
+    width: min(64%, 480px);
+    aspect-ratio: 461 / 130;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transform-origin: center;
+    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
 .pixel-ai-logo {
-    width: min(108%, 720px);
+    width: 182.65%;
     max-width: none;
     height: auto;
+    position: absolute;
+    top: -181.54%;
+    left: -40.13%;
     display: block;
     object-fit: contain;
     filter: drop-shadow(0 18px 24px color-mix(in srgb, var(--card-accent) 24%, transparent));
-    transform: scale(1.55);
-    transform-origin: center;
-    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 220ms ease;
+    transition: filter 220ms ease;
     user-select: none;
+}
+
+button.project-card:hover .pixel-ai-logo-crop {
+    transform: translateY(-2px) scale(1.025);
 }
 
 button.project-card:hover .pixel-ai-logo {
     filter: drop-shadow(0 22px 30px color-mix(in srgb, var(--card-accent) 32%, transparent));
-    transform: scale(1.6) translateY(-2px);
 }
 
 @media screen and (max-width: 480px) {
@@ -1454,13 +1468,8 @@ button.project-card:hover .pixel-ai-logo {
         padding: 18px;
     }
 
-    .pixel-ai-logo {
-        width: 116%;
-        transform: scale(1.36);
-    }
-
-    button.project-card:hover .pixel-ai-logo {
-        transform: scale(1.4) translateY(-1px);
+    .pixel-ai-logo-crop {
+        width: min(82%, 340px);
     }
 }
 
