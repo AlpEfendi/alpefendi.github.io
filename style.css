@@ -1351,6 +1351,10 @@ button.project-card:focus-visible {
     --card-accent: var(--orange);
 }
 
+.accent-pixel {
+    --card-accent: color-mix(in srgb, var(--purple) 58%, var(--pink));
+}
+
 .project-window-bar {
     border-top: 4px solid var(--card-accent);
 }
@@ -1418,6 +1422,46 @@ button.project-card:hover .card-image {
     width: min(55%, 180px);
     height: min(55%, 180px);
     object-fit: contain;
+}
+
+.card-media--pixel {
+    padding: 28px;
+    background:
+        radial-gradient(circle at 24% 20%, color-mix(in srgb, var(--card-accent) 34%, transparent), transparent 38%),
+        linear-gradient(145deg, color-mix(in srgb, var(--surface) 82%, var(--card-accent)), var(--surface-sunken));
+}
+
+.pixel-ai-logo {
+    width: min(108%, 720px);
+    max-width: none;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 24px color-mix(in srgb, var(--card-accent) 24%, transparent));
+    transform: scale(1.55);
+    transform-origin: center;
+    transition: transform 320ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 220ms ease;
+    user-select: none;
+}
+
+button.project-card:hover .pixel-ai-logo {
+    filter: drop-shadow(0 22px 30px color-mix(in srgb, var(--card-accent) 32%, transparent));
+    transform: scale(1.6) translateY(-2px);
+}
+
+@media screen and (max-width: 480px) {
+    .card-media--pixel {
+        padding: 18px;
+    }
+
+    .pixel-ai-logo {
+        width: 116%;
+        transform: scale(1.36);
+    }
+
+    button.project-card:hover .pixel-ai-logo {
+        transform: scale(1.4) translateY(-1px);
+    }
 }
 
 .play-overlay {
@@ -1721,6 +1765,16 @@ button.project-card:hover .card-image {
     font-size: 0.78rem;
     font-weight: 600;
     line-height: 1.55;
+}
+
+.cv-item-company a {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.cv-item-company a:hover {
+    color: var(--text);
 }
 
 :root[data-theme="light"] .cv-item-company {
@@ -2311,6 +2365,28 @@ button.project-card:hover .card-image {
     color: var(--ink);
     border-color: var(--ink);
     background: var(--yellow);
+}
+
+.details-external-link {
+    min-height: 40px;
+    padding: 9px 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line-strong);
+    border-radius: 9px;
+    color: var(--text);
+    background: var(--surface-sunken);
+    box-shadow: var(--control-shadow);
+    font-weight: 700;
+    text-decoration: none;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.details-external-link:hover {
+    border-color: var(--page-accent);
+    background: var(--surface-raised);
+    transform: translateY(-2px);
 }
 
 /* Container adaptations */

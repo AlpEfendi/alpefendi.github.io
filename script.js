@@ -31,6 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Project Data
     const projectDetails = {
+        'pixel_ai_agency': {
+            title: 'Pixel AI Agency — Video Prodüksiyon Uzmanı',
+            content: `
+                <h3>Video Editör &amp; AI Content Creator</h3>
+                <p><strong>Pixel AI Agency · Tam zamanlı</strong><br>
+                <time datetime="2026-02">Şubat 2026</time> — Günümüz<br>
+                İzmir, Türkiye · Ofisten</p>
+
+                <p>Pixel AI Agency bünyesinde markalar ve işletmeler için yaratıcı video prodüksiyonu gerçekleştiriyorum. Sosyal medya reklamları, tanıtım filmleri, kısa format videolar, yapay zekâ destekli animasyonlar ve sinematik içerikler üretiyor; geleneksel video editörlüğü ile yapay zekâ tabanlı üretim araçlarını aynı iş akışında birleştiriyorum.</p>
+
+                <h3>Görev Kapsamım:</h3>
+                <ul>
+                    <li>Sosyal medya reklamları ve video içeriklerinin kurgu ve montajı</li>
+                    <li>Yapay zekâ destekli görsel, video ve animasyon üretimi</li>
+                    <li>AI video araçlarıyla sinematik sahne tasarımı ve içerik geliştirme</li>
+                    <li>Motion graphics, görsel efekt ve post-prodüksiyon çalışmaları</li>
+                    <li>Instagram Reels, TikTok ve YouTube Shorts formatlarına uygun içerik üretimi</li>
+                    <li>Marka kimliğine uygun yaratıcı konsept geliştirme</li>
+                    <li>Yapay zekâ destekli reklam, tanıtım ve hikâye anlatımı projeleri</li>
+                </ul>
+
+                <h3>Yetenekler:</h3>
+                <div class="skill-tags-container">
+                    <span class="skill-tag">Video Prodüksiyonu</span>
+                    <span class="skill-tag">Video Kurgu</span>
+                    <span class="skill-tag">Yapay Zekâ</span>
+                    <span class="skill-tag">AI Video</span>
+                    <span class="skill-tag">Post-prodüksiyon</span>
+                    <span class="skill-tag">Motion Graphics</span>
+                    <span class="skill-tag">Animasyon</span>
+                    <span class="skill-tag">Görsel Efekt</span>
+                    <span class="skill-tag">Sosyal Medya</span>
+                    <span class="skill-tag">Reklam</span>
+                </div>
+
+                <p><a class="details-external-link" href="https://www.linkedin.com/company/pixel-ai-agency/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="Pixel AI Agency LinkedIn sayfası, yeni sekmede açılır">Pixel AI Agency LinkedIn sayfası <span aria-hidden="true">↗</span></a></p>
+            `
+        },
         'mazi_kalbimde': {
             title: 'Mazi Kalbimde Bir Yaradır - AI Music & Video Producer',
             videoUrl: 'https://vimeo.com/1159577486',

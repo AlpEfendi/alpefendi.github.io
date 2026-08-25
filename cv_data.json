@@ -31,6 +31,17 @@
   ],
   "experience": [
     {
+      "period": "Şubat 2026 - Devam",
+      "company": "Pixel AI Agency",
+      "role": "Video Prodüksiyon Uzmanı",
+      "location": "İzmir, Türkiye",
+      "employment_type": "Tam Zamanlı",
+      "workplace_type": "Ofisten",
+      "current": true,
+      "company_url": "https://www.linkedin.com/company/pixel-ai-agency/posts/?feedView=all",
+      "description": "Video editörlüğü ve yapay zekâ destekli içerik üretimini birleştirerek sosyal medya reklamları, tanıtım filmleri, kısa format videolar, AI destekli animasyonlar ve sinematik içerikler üretiyorum. Kurgu, hareketli grafikler, görsel efekt ve post prodüksiyon süreçlerini marka kimliği ile platform ihtiyaçlarına uygun biçimde yürütüyorum."
+    },
+    {
       "period": "Ocak 2026",
       "company": "Şahıs · Proje Bazlı",
       "project": "\"Mazi Kalbimde Bir Yaradır\"",
